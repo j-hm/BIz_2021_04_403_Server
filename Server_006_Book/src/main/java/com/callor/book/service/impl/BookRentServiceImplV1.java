@@ -51,7 +51,9 @@ public class BookRentServiceImplV1 implements BookRentService{
 		try {
 			pStr = dbConn.prepareStatement(sql);
 			List<BookRentDTO> brList = this.select(pStr);
+			
 			pStr.close();
+			return brList;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -167,7 +169,29 @@ public class BookRentServiceImplV1 implements BookRentService{
 
 	@Override
 	public int insert(BookRentVO bookRentVO) {
-		// TODO Auto-generated method stub
+		// TODO 도서대여정보저장
+		String sql = " INSERT INTO tbl_book_rent ";
+		sql += " (br_seq, br_sdate, br_isbn, br_bcode, br_price) ";
+		sql += " VALUES(seq_book_rent.NEXTVAL,?,?,?,?) ";
+				
+		PreparedStatement pStr = null;
+		try {
+			pStr = dbConn.prepareStatement(sql);
+			pStr.setString(1, bookRentVO.getBr_sdate());
+			pStr.setString(2, bookRentVO.getBr_isbn());
+			pStr.setString(3, bookRentVO.getBr_bcode());
+			pStr.setInt(4, bookRentVO.getBr_price());
+			//insert, update,delete와 관련된 SQL은  excuteUpdate() method로 처리한다
+			// 정상적으로 SQL 이 성공하면 result 에는
+			// 0 보다 큰값이 담긴다
+			int result = pStr.executeUpdate();
+			pStr.close();
+			return result;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return 0;
 	}
 

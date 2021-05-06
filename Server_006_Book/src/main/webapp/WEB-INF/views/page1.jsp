@@ -27,6 +27,9 @@ HTML주석보다 다소 자유롭게 작성가능
 <body>
 	<h1>회원정보 조회결과</h1>
 	<c:if test="${empty BUYERS }">회원정보 없음</c:if>
+	<%--
+	(추가)
+	 --%>
 	<c:forEach items="${BUYERS }" var="BUYER">
 		<p>${BUYER.bu_code}, <a href ="page2?bu_code=${BUYER.bu_code}"> ${BUYER.bu_name}</a>, ${BUYER.bu_tel}, ${BUYER.bu_addr}
 	
