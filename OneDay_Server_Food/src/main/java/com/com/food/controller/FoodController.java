@@ -48,7 +48,7 @@ public class FoodController extends HttpServlet {
 		resp.setContentType("text/html;charset=UTF-8");
 		req.setCharacterEncoding("UTF-8");
 		PrintWriter out = resp.getWriter();
-		
+
 		if (subPath.equals("/serch")) {
 
 			String f_name = req.getParameter("f_name");
@@ -63,25 +63,28 @@ public class FoodController extends HttpServlet {
 			}
 
 		} else if (subPath.equals("/info")) {
-
+			//
 			String mf_date = req.getParameter("mf_date");
 			String mf_fcode = req.getParameter("mf_fcode");
 			String count = req.getParameter("mf_count");
-			Integer mf_count = Integer.valueOf(count);
-			
-			FoodVO foodVO = new FoodVO();
-			foodVO.setMf_date(mf_date);
-			foodVO.setMf_fcode(mf_fcode);
-			foodVO.setMf_count(mf_count);
-			int result = fService.insert(foodVO);
-			req.setAttribute("FOOD", foodVO);
-			if (result > 0) {
-				req.getRequestDispatcher("/WEB-INF/views/food_log.jsp").forward(req, resp);
+			if (count == null || count.equals("")) {
+				out.println("빈 칸이 없도록 입력해주세요");
 			} else {
-				out.println("<p>추가실패");
+				Integer mf_count = Integer.valueOf(count);
+
+				FoodVO foodVO = new FoodVO();
+				foodVO.setMf_date(mf_date);
+				foodVO.setMf_fcode(mf_fcode);
+				foodVO.setMf_count(mf_count);
+				int result = fService.insert(foodVO);
+				req.setAttribute("FOOD", foodVO);
+				if (result > 0) {
+					req.getRequestDispatcher("/WEB-INF/views/food_log.jsp").forward(req, resp);
+				} else {
+					out.println("<p>추가실패");
+				}
+				out.close();
 			}
-			out.close();
 		}
 	}
-
 }
