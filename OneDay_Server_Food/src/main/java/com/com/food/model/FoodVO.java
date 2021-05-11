@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class FoodVO {
+public class FoodVO {	
 	private String mf_date;   	//VARCHAR2(10)	NOT NULL
 	private String mf_fcode;	//CHAR(7)	NOT NULL
 	private Integer mf_count = 0;	//NUMBER	NOT NULL
