@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>다이어트를 도와줘</h1>
+	<h1>&#127947;다이어트를 도와줘&#127947;</h1>
 	<a href="/HelpDiet/food/serch">
 		<button>섭취정보등록</button>
 	</a>
