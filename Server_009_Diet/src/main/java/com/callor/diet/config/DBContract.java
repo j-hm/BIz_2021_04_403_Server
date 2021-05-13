@@ -9,8 +9,8 @@ public class DBContract {
 	static {
 		String jdbcDriver = "oracle.jdbc.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String username = "food";
-		String password = "food";
+		String username = "myfood";
+		String password = "myfood";
 		
 		if(dbConn == null) {
 			try {
@@ -30,5 +30,9 @@ public class DBContract {
 				System.out.println("=".repeat(30));
 			}
 		}
+	}
+	
+	public static Connection getDBConnection() {
+		return dbConn;
 	}
 }
