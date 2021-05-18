@@ -17,7 +17,7 @@ root Folder로 인식된다
 홈컨트롤러가 catcher하도록 만들어져있기 때문에 어떠한 파일로 연결을 할 수 없다.
 
 --%>
-<link rel="stylesheet" href="${rootPath}/css/home.css?ver=1" />
+<link rel="stylesheet" href="/diet/css/home.css?ver=1" />
 </head>
 <body>
 	<h1>&#127775;다이어트를 도와줘&#127775;</h1>
