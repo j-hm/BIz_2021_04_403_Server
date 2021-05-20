@@ -35,8 +35,6 @@ public class GuestBookServiceImplV1 implements GuestBookService {
 			gbList.add(gbVO);
 
 		}
-
-		System.out.println(gbList.toString());
 		return gbList;
 	}
 

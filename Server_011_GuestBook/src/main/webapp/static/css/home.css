@@ -20,29 +20,6 @@ h1 {
 	padding:2rem;
 	
 }
-
-nav {
-	background-color: #fed065;
-}
-
-ul {
-	margin:0px;
-	background-color: #fed065;
-}
-
-li {
-	display :inline-block;
-	list-style : none;
-	margin: 0px;
-	padding:10px;
-	color:white;
-}
-
-li:hover {
-	background-color: #8080ff;
-	color:#ffffff;
-}
-
 table {
 	border-collapse: collapse;
 	width: 80%;
