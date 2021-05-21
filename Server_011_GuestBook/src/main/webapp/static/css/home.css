@@ -18,7 +18,7 @@ h1 {
 	비율에 맞추어서 상대적으로 크기를 지정하기
 	*/
 	padding:2rem;
-	
+	text-align: center;
 }
 table {
 	border-collapse: collapse;
